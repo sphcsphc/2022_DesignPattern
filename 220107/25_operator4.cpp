@@ -28,8 +28,7 @@ int main()
     cout << p1 << endl;
     // cout.operator<<(p1)
     // => cout.operator<<(const Point&)
-    // => 멤버 함수는 ostream 클래스를 수정할 수 없으므로
-    //   제공이 불가능합니다.
+    // => 멤버 함수는 ostream 클래스를 수정할 수 없으므로 제공이 불가능합니다.
 
     // operator<<(cout, p1)
     // => operator(std::ostream& os, const Point&)
