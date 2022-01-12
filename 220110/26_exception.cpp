@@ -24,12 +24,10 @@ int goo(int a)
                  // 반환값(return)과 실패(throw)의 전달이 분리됩니다.
     }
 
-    throw 3.14;
-
     return 0;
 }
 
-#if 1
+#if 0
 int main()
 {
     int ret1 = goo(-100);
@@ -48,7 +46,7 @@ int main()
 
 // 예외 처리 방법
 //  => try-catch 블록을 이용합니다.
-#if 0
+#if 1
 int main()
 {
     try {
