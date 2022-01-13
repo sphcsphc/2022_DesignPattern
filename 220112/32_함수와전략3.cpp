@@ -10,8 +10,7 @@ void foo() { }
 void goo() { }
 
 // 1. 함수는 자신만의 타입이 없다.
-//  > 함수의 시그니처(인자 정보, 반환 타입) 동일한 모든 함수는
-//    같은 타입입니다.
+//  > 함수의 시그니처(인자 정보, 반환 타입) 동일한 모든 함수는 같은 타입입니다.
 
 // 2. 함수 객체는 자신만의 타입이 있다.
 //  > 시그니처가 동일해도 모든 함수 객체는 다른 타입이다.
@@ -31,9 +30,12 @@ struct Minus {
 int main()
 {
     Plus plus;
+    Minus minus;
 
-    int result = plus(10, 20);
-    // plus.operator()(10, 20);
+    // int result = plus(10, 20);
+    // int result = minus(10, 20);
+
+    int result = plus.operator()(10, 20);
 
     cout << result << endl;
 }
