@@ -42,6 +42,7 @@ int main()
     // 1) 함수 객체로 전달
     // 장점: 정책이 호출되는 것이 아니라 인라인 치환됩니다. 빠르다.
     // 단점: 코드를 생성합니다.
+    
     Sort(x, 10, less); // => Sort(int*, int, Less)
     Sort(x, 10, greater); // => Sort(int*, int, Greater)
 
@@ -50,6 +51,7 @@ int main()
     //      코드 메모리 사용량 증가하지 않습니다.
     // 단점: 호출 오버헤드가 있습니다.
     //      인라인 치환이 불가능합니다.
+
     Sort(x, 10, &cmp1); // => Sort(int*, int, bool(*)(int, int))
     Sort(x, 10, &cmp2); // => Sort(int*, int, bool(*)(int, int))
 
