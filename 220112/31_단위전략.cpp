@@ -69,5 +69,5 @@ int main()
     // st.SetSync(new SingleThread);
     st.SetSync(&t);
 
-    st.push_front(10);
+    st.push_front(5);
 }
