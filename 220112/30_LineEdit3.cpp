@@ -32,8 +32,7 @@ int getch(void)
 struct Validator {
     virtual ~Validator() { }
 
-    virtual bool Validate(const std::string& s, char c)
-        = 0;
+    virtual bool Validate(const std::string& s, char c) = 0;
 
     virtual bool IsComplete(const std::string& s) = 0;
 };
@@ -88,7 +87,7 @@ public:
 
     bool Validate(const std::string& s, char c) override
     {
-        return s.size() < limit && isdigit(c);
+        return s.size() < limit && isdigit(c); //isdigit(c) - c가 숫자이면 0이 아닌 값을 반환한다.
     }
 
     bool IsComplete(const std::string& s) override
