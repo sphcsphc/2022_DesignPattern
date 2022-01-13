@@ -12,8 +12,7 @@ using namespace std;
 //   => 다형성!!!
 
 // MenuItem과 PopupMenu의 공통의 부모입니다.
-// > MenuItem과 PopupMenu가 제공하는 공통의 기능이 반드시 부모 클래스로부터
-//   비롯되어야 합니다.
+// > MenuItem과 PopupMenu가 제공하는 공통의 기능이 반드시 부모 클래스로부터 비롯되어야 합니다.
 class BaseMenu {
     std::string title;
 
@@ -62,6 +61,13 @@ public:
             delete e;
     }
 
+    void Print()
+    {
+        for (auto e : v)
+            cout << e->GetTitle() << ' ';
+        cout << endl;
+    }
+
     void AddMenu(BaseMenu* p)
     {
         v.push_back(p);
@@ -102,6 +108,7 @@ int main()
     PopupMenu* menubar = new PopupMenu("Menubar");
     PopupMenu* file = new PopupMenu("파일");
     PopupMenu* edit = new PopupMenu("편집");
+    
     menubar->AddMenu(file);
     // menubar->AddMenu(edit);
     file->AddMenu(edit);
@@ -115,4 +122,12 @@ int main()
     edit->AddMenu(new MenuItem("붙여넣기"));
 
     menubar->Command();
+
+    cout << endl;
+    cout << menubar->GetTitle() << " : ";
+    menubar->Print();
+    cout << file->GetTitle() << " : ";
+    file->Print();
+    cout << edit->GetTitle() << " : ";
+    edit->Print();
 }
