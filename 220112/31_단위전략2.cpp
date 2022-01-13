@@ -5,8 +5,7 @@ using namespace std;
 // => Policy Based Design(단위 전략)
 // 장점: 가상함수 아니라 인라인 함수 입니다.
 //      호출에 따른 성능 저하가 없다.
-// 단점: Template 인자이므로, 실행 시간에 정책 교체가
-//      불가능합니다.
+// 단점: Template 인자이므로, 실행 시간에 정책 교체가 불가능합니다.
 //      컴파일 할때 정책이 결정됩니다.
 // => 정책을 담은 코드를 컴파일 시간에 생성하는 기술
 //  : C++ 표준 라이브러리의 핵심 설계 철학
@@ -26,7 +25,7 @@ public:
 
 template <
     typename T,
-    typename ThreadModel = SingleThread>
+    typename ThreadModel = SingleThread >
 class List : public ThreadModel {
 public:
     void push_front(const T& a)
