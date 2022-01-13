@@ -20,7 +20,7 @@ int main()
     sort(x, x + 10, &cmp1);
 
     sort(x, x + 10, l);
-    sort(x, x + 10, g);
+    // sort(x, x + 10, g);
 
     for (int e : x) {
         cout << e << endl;
