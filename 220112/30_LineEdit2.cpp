@@ -24,7 +24,7 @@ int getch(void)
 
 // 1. Validation 정책은 변경이 가능해야 한다.
 //  방법 1) 변하는 것을 가상 함수로 뽑아낸다.
-//    => Tempalte Method Pattern
+//    => Template Method Pattern
 
 class LineEdit {
     std::string data;
@@ -77,6 +77,9 @@ int main()
 
     while (1) {
         string s = edit.GetData();
+        if (s == "q") { 
+            break; 
+        }
         cout << "out: " << s << endl;
     }
 }
